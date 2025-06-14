@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = 
+            document.getElementById('darkModeToggle');
+            toggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                document.header.classList.toggle('dark');
+            })
+        })
+
+        const hamburger =
+        document.getElementById('hamburger');
+        const navLinks =
+        document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" id="logo">
+                
+            </div>
+            <script>
+        const text = "Okolo Somtochukwu Jason"
+        let i = 0;
+        function type() {
+            if (i < text.length){
+                document.getElementById("logo").textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        type();
+        </script>
+            <ul class="nav-link">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li><button id="darkModeToggle" > D</button></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">&#9776</div>
+    </header>
+
+
+
+    <section id="about">
+        <h1>Hi, Im Jason</h1>
+        <p>I'm a front-end developer who loves crafting beautiful web experiences</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project One</h3>
+            <p>Description of the project</p>
+        </div>
+        <div class="project">
+            <h3>Project Two</h3>
+            <p>Description of the project</p>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <h2>
+            Contact
+        </h2>
+        <form>
+            <input type="text" placeholder="Your Name" required/>
+            <input type="email" placeholder="Your Email" required/>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="button">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>
+            &copy; 2025 JaceTech
+        </p>
+    </footer>
+</body>
+</html>

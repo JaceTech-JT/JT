@@ -1,0 +1,120 @@
+:root{
+    --bg: #fffg;
+    --text: #222;
+    --primary: #0077ff;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body.dark{
+    --bg: #1e1e1e;
+    --text: #f0f0f0;
+}
+
+body{
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+header{
+    background: var(--primary);
+    padding: 1rem;
+    color: rgb(190, 178, 175);
+}
+.hamburger{
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+@media(max-width: 768px) {
+    .nav-link{
+        display: none;
+        flex-direction: column;
+        background-color: #0056b3;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 6px;
+    }
+    .nav-link.active{
+        display: flex;
+    }
+    .hamburger{
+        display: block;
+    }
+}
+
+.logo{
+    font-size: 38px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(5, 19, 71);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-link a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background: #fff;
+    transition: width 0.3s;
+}
+.nav-link a:hover::after{
+    width: 100%;
+}
+.nav-link a:hover{
+    color: #ffd700;
+    transition: color 0.3s;
+}
+section{
+    padding: 2rem;
+}
+
+.project{
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 400px;
+}
+
+input, textarea, button{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+button{
+    background-color: #a1aa93;
+}
+footer{
+    text-align: center;
+    padding: 0.01rem;
+    background: #f1f1f1;
+    color: #000;
+}
